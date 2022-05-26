@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>inline</title>
+    <script type="text/javascript" th:inline="javascript">
+         var myname = [[${name}]];
+         var myage = [[${age}]];
+
+         //alert("获取的模板中数据 "+ myname + ","+myage)
+
+        function fun(){
+            alert("单击事件，获取数据 "+ myname + ","+ [[${sex}]])
+        }
+    </script>
+</head>
+<body>
+    <div style="margin-left: 400px">
+        <h3>内联 text, 使用内联表达式显示变量的值</h3>
+        <div th:inline="text">
+            <p>我是[[${name}]]，年龄是[[${age}]]</p>
+            我是<span th:text="${name}"></span>,年龄是<span th:text="${age}"></span>
+        </div>
+
+        <div>
+            <p>使用内联text</p>
+            <p>我是[[${name}]],性别是[[${sex}]]</p>
+            <input type="button" name="btn" value="单击获取模板数据" onclick="fun()">
+        </div>
+    </div>
+</body>
+</html>

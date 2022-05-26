@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>循环Map</title>
+</head>
+<body>
+    <div style="margin-left: 400px">
+        <div th:each="map,userStat:${mymap}">
+            <p th:text="${map.key}"></p>
+            <p th:text="${map.value}" ></p>
+            <p th:text="${map.value.id}"></p>
+            <p th:text="${map.value.name}"></p>
+            <p th:text="${userStat.index}"></p>
+            <br/>
+            <hr/>
+        </div>
+
+
+        <br/>
+        <br/>
+        <div th:each="strmap:${strmap}">
+            <p th:text="${strmap.key}"></p>
+            <p th:text="${strmap.value}"></p>
+        </div>
+
+        <h3>循环List《Map》  Map<String,SysUser> lm: listmap.get(0)</h3>
+        <div th:each="lm:${listmap}">
+            <!--循环map中的所有key，value-->
+            <div th:each="m:${lm}">
+                <p th:text="${m.key}"></p>
+                <p th:text="${m.value.id}"></p>
+                <p th:text="${m.value.name}"></p>
+                <p th:text="${m.value.age}"></p>
+                <br/>
+                <hr/>
+            </div>
+            <br>
+            <hr>
+
+        </div>
+
+
+
+
+
+    </div>
+</body>
+</html>

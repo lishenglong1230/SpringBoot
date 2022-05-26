@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+
+</head>
+<body>
+    <div style="margin-left: 400px">
+        <h3>使用运算符</h3>
+        <p th:text="${age > 10}">年龄大于 10 </p>
+        <p th:text="${ 20 + 30 }">显示运算结果</p>
+        <p th:if="${myuser == null}">myuser是null</p>
+        <p th:if="${myuser eq null}">myuser是null</p>
+        <p th:if="${myuser ne null}">myuser不是null</p>
+
+        <p th:text="${isLogin == true ? '用户已经登录' : '用户需要登录'}"></p>
+        <p th:text="${isLogin == true ? ( age > 10 ? '用户是大于10的' : '用户年龄比较小') : '用户需要登录'}"></p>
+
+    </div>
+</body>
+</html>
